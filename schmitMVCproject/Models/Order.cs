@@ -15,7 +15,7 @@ namespace schmitMVCproject.Models
         //order is on the one side of 1:M relationship with OrderDetail
         //indicated by ICollection
 
-        public ICollection<orderDetail> OrderDetail { get; set; }
+        public ICollection<OrderDetail> OrderDetail { get; set; }
 
         public int customerID { get; set; }
 
