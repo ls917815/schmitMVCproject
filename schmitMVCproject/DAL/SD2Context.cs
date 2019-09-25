@@ -14,6 +14,8 @@ namespace schmitMVCproject.DAL
         {
             //this method is a 'constructor' and is called when a new context is created
             //the base attribute says which connection string to use
+            //SetInitializer statement
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<SD2Context, schmitMVCproject.Migrations.MISContext.Configuration>("DefaultConnection"));
         }
 
         //include each object here. The value inside <> is the name of the class
@@ -22,5 +24,11 @@ namespace schmitMVCproject.DAL
 
         public DbSet<Employer> Employers { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Client> Clients { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
