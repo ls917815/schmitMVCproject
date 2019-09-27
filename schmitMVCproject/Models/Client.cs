@@ -18,7 +18,5 @@ namespace schmitMVCproject.Models
         //link client to employee
         public int employeeID { get; set; }
         public virtual Employee Employee { get; set; }
-
-        public ICollection<Employee> Employees { get; set; }
     }
 }

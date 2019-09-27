@@ -21,7 +21,7 @@ namespace schmitMVCproject.Models
 
         public int employerID { get; set; }
 
-        public virtual Employee Employees { get; set; }
+        public virtual Employer Employers { get; set; }
 
         public ICollection<Client> Clients { get; set; }
     }
