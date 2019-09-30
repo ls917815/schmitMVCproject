@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using schmitMVCproject.Models;
 using System.Data.Entity;
-
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace schmitMVCproject.DAL
 {
@@ -26,9 +26,15 @@ namespace schmitMVCproject.DAL
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Client> Clients { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+        }
+        */
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
     }
 }
