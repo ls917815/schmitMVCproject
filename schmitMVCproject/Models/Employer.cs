@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace schmitMVCproject.Models
 {
@@ -10,12 +12,22 @@ namespace schmitMVCproject.Models
         
         public int employerID { get; set; }
 
+       [DisplayName("Employer Name")]
+       [Required]
+       [StringLength(20)]
         public string employerName { get; set; }
 
         //public string lastName { get; set; }
 
+        [Display (Name ="Phone number")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^(\(\d{3}\) |\d{3}-)\d{3}-\d{4}$",
+            ErrorMessage ="Phone numbers must be in format xxx-xxx-xxxx")]
         public string phone { get; set; }
 
+        [Display (Name ="Email Address")]
+        [Required]
+        [EmailAddress(ErrorMessage ="Please enter an email address")]
         public string email { get; set; }
 
         //public DateTime customerSince { get; set; }

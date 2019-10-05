@@ -10,8 +10,20 @@ namespace schmitMVCproject.Models
     {
         [Key]
         public int employeeID { get; set; }
+
+        [Display (Name ="First name")]
+        [Required(ErrorMessage ="Employee first name is required")]
+        [StringLength(20)]
         public string firstName { get; set; }
+
+        [Display(Name = "Last name")]
+        [Required(ErrorMessage = "Employee last name is required")]
+        [StringLength(20)]
         public string lastName { get; set; }
+
+        [Display(Name = "Department name")]
+        [Required(ErrorMessage = "Employee department name is required")]
+        [StringLength(20)]
         public string department { get; set; }
 
         //order is on the one side of 1:M relationship with OrderDetail

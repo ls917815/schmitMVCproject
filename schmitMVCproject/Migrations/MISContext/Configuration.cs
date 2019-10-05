@@ -12,6 +12,7 @@ namespace schmitMVCproject.Migrations.MISContext
             AutomaticMigrationsEnabled = true;
             MigrationsDirectory = @"Migrations/MISContext";
             ContextKey = "schmitMVCproject.DAL.MISContext";
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(schmitMVCproject.DAL.SD2Context context)
